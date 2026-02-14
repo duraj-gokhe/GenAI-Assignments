@@ -6,7 +6,7 @@ import os
 
 
 # API endpoint
-conversation = "/document/upload_doc"
+document_upload = "/document/upload_doc"
 
 
 def lambda_handler(event, context):
@@ -14,7 +14,7 @@ def lambda_handler(event, context):
     http_method = event['httpMethod']
     url_path = event["path"]
 
-    if http_method == 'POST' and url_path == conversation:
+    if http_method == 'POST' and url_path == document_upload:
         files = body.get('files')
         response = document_upload(files)
         return response
