@@ -9,7 +9,7 @@ from langchain_aws import ChatBedrock
 from langchain_aws import AmazonKnowledgeBasesRetriever
 
 # API endpoint
-conversation = "chat/conversation"
+conversation = "/chat/conversation"
 
 
 def lambda_handler(event, context):
