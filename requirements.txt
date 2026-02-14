@@ -1,0 +1,7 @@
+streamlit
+boto3
+os
+json
+
+langchain_core
+langchain_aws 
