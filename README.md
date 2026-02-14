@@ -10,6 +10,39 @@ Conversational AI bot for own documents with RAG and Embedding vector
 
 **conversation.py** - This file has bedrock connection and langchin code for prompt and response. We are configuring Bedrock for handling the prompt with sync documents and store embeeding vector in DB.
 
+**chat_bot_ui.py** - This file present UI code which has small code for prompt text box and submit button to call API.
+
+**requirements.txt** - This file has all installation package which we need to require to run this code.
+
+
+<br><br>
+
+
+################################  **Application WorkFlow** #####################################
+
+<br>
+
+**Requirements** ---
+
++ pip install python
++ install requirements.txt file
+
+**Flow** --- 
+<br>
+This application I run in AWS but URL is not live and locally I have setup all things.
+
++ User can upload documents from upload files(5 files allow in one time)
++ This upload file functionality will call **/document/upload_doc** end point and uplaod document in **S3 DataSource bucket**
++ After uploading file in S3 bucket , bucket will trigger event than it will call **document-sync lambda**
++ Document sync lambda will run and call to **Start_injetion_job** for inject document with bedrock knowledgebase.
++ Bedrock Knowledge base split documents in chunks and store **embedding** in **postgreSQL** db in vector table.
++ After syncing completion user can ask prompt related to that document.
++ When user will ask prompt than **chat/conversation** API endpoint will call and it will call RAG or bedrock API for response.
++ After bedrock API call RAG will check all prompt validation and parameter for RAG and get response accordingly.
++ After getting response user will get citation part also with response , which will give document reference for user to check
+which document it is refereing and  giving response.
+
+
 <br><br>
 
 ################################  **AWS SERVICES**  ############################################

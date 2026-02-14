@@ -43,9 +43,10 @@ def conversation_kb(query):
     }
 
     # LangChain - RAG chain with citations
-    template = ''' you are document assistant, provide response with document related 
+    template = ''' you are a document assistant, provide response with document related 
                 1. If some date or recent documents ask provide top records like - date wise filtering
-                2. If documents response lenght is more than 500 words split it and send in chunks'''
+                2. If documents response lenght is more than 500 words split it and send in chunks
+                3. If documents not found in data source than No Documents available for this query related.'''
 
     prompt = ChatPromptTemplate.from_template(template)
 
