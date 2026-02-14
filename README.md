@@ -61,33 +61,26 @@ do not need maintaning the configuration.
 
 - **API ENDPOINTS**
 
-1.  **/chat/conversation** - This endpoint conncet with Knowledge Base, when user ask any prompt than this API will call and it will send request to bedrock knowledge base with all payload and RAG configurtion, It will connect and retrieve information from vector embedding and send to user.
+    1.  **/chat/conversation** - This endpoint conncet with Knowledge Base, when user ask any prompt than this API will call and it will send request to bedrock knowledge base with all payload and RAG configurtion, It will connect and retrieve information from vector embedding and send to user.
 
 <br>
 
-#################  **AWS BEDROCK**  #####################
+- **AWS BEDROCK** - Bedrock help to create AI projeect with RAG, chatbot, agent. We are using Amazon Bedrock to solve this problem and get response.
 
-Bedrock help to create AI projeect with RAG, chatbot, agent.
-We are using Amazon Bedrock to solve this problem and get response.
+    + **Bedrock-Knowledge Base** - THis is Bedrock component which will help to create RAG functionality. We need to configure other componant for all setup like - vector database, datasource, embedding model.
 
-**Bedrock-Knowledge Base** - THis is Bedrock component which will help to create RAG functionality. We need to configure other componant for all setup like - vector database, datasource, embedding model.
+    + **Bedrock SETUP**
 
+        - **S3 bucket** - This is data source of all documents storage. It will store documents like - pdf, docx, text file.
 
-###########  **Bedrock SETUP**  #############
-
-**S3 bucket** - This is data source of all documents storage. It will store documents like - pdf, docx, text file.
-
-**Vector Database** - We choose vector database which will store vector embedding , here I am choosing **AURORA POSTGRESQL**.
-                    this is relational database and manage vectors well as columns and its not so costly as well.
+        - **Vector Database** - We choose vector database which will store vector embedding , here I am choosing **AURORA POSTGRESQL**.This is relational database and manage vectors well as columns.
                     + Database - conversdation-AI
                     + Table - bedrock_embedding
                     + Fields - Id, chunks, embedding, custome_field
 
-**Embedding Model** - here we can select any model for embedding like - titel, nova, cohere. for now I am working with 
-                      **Cohere V3**. here this will use **RecursiveTextEmbedding**.
+        - **Embedding Model** - here we can select any model for embedding like - titel, nova, cohere. for now I am working with **Cohere V3**. here this will use **RecursiveTextEmbedding**.
 
-**Chunking** - Chunking is defferent tyeps we have  but as per we are working on text so selecting **Sementic Chunking**
-               which will devide chunks in 512 tokens for each.
+        - **Chunking** - Chunking is defferent tyeps we have  but as per we are working on text so selecting **Sementic  Chunking** which will devide chunks in 512 tokens for each.
 
 
 
