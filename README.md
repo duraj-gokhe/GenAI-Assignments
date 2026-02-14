@@ -65,7 +65,7 @@ do not need maintaning the configuration.
 
 <br>
 
-- **AWS BEDROCK** - Bedrock help to create AI projeect with RAG, chatbot, agent. We are using Amazon Bedrock to solve this problem and get response.
+**AWS BEDROCK** - Bedrock help to create AI projeect with RAG, chatbot, agent. We are using Amazon Bedrock to solve this problem and get response.
 
     + **Bedrock-Knowledge Base** - THis is Bedrock component which will help to create RAG functionality. We need to configure other componant for all setup like - vector database, datasource, embedding model.
 
