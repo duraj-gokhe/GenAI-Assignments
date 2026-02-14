@@ -27,17 +27,19 @@ Conversational AI bot for own documents with RAG and Embedding vector
 + pip install python
 + install requirements.txt file
 
-**Flow** --- 
+**Applcatiion Flow** --- 
 <br>
 This application I run in AWS but URL is not live and locally I have setup all things.
 
 + User can upload documents from upload files(5 files allow in one time)
 + This upload file functionality will call **/document/upload_doc** end point and uplaod document in **S3 DataSource bucket**
++ When file upload come form UI, It will be in dictionary format which has filename as key and encoding format of file content as value.
++ After that that API will take and convert in decoding format and upload in s3 bucket.
 + After uploading file in S3 bucket , bucket will trigger event than it will call **document-sync lambda**
 + Document sync lambda will run and call to **Start_injetion_job** for inject document with bedrock knowledgebase.
 + Bedrock Knowledge base split documents in chunks and store **embedding** in **postgreSQL** db in vector table.
 + After syncing completion user can ask prompt related to that document.
-+ When user will ask prompt than **chat/conversation** API endpoint will call and it will call RAG or bedrock API for response.
++ When user will ask prompt than **chat/conversation** API endpoint will call and it will call **RAG** or **bedrock API** for response.
 + After bedrock API call RAG will check all prompt validation and parameter for RAG and get response accordingly.
 + After getting response user will get citation part also with response , which will give document reference for user to check
 which document it is refereing and  giving response.
