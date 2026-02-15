@@ -1,6 +1,6 @@
 **CONVERSATIONAL AI BOT**
 
-Conversational AI bot for own documents with RAG and Embedding vector
+Conversational AI bot for own documents with RAG and Embedding vector which will work on Serverless Architecture.
 <br><br>
 
 ################################  **Files & Folders**  ######################################
