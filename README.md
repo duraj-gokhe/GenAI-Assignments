@@ -117,11 +117,11 @@ do not need maintaning the configuration.
 
     - **Chunking** - Chunking is defferent tyeps we have  but as per we are working on text so selecting **Sementic  Chunking** which will devide chunks in 512 tokens for each.
 
-<br>
+<br><br>
 
 ############################## **Feature Enhancement** ##############################
 
-<br><br>
+<br>
 
 + We can manage role based document manage.
 + We can enhance the feature of multiple teams and manage documents.
