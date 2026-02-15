@@ -117,6 +117,18 @@ do not need maintaning the configuration.
 
     - **Chunking** - Chunking is defferent tyeps we have  but as per we are working on text so selecting **Sementic  Chunking** which will devide chunks in 512 tokens for each.
 
+<br>
+
+############################## **Feature Enhancement** ##############################
+
+<br><br>
+
++ We can manage role based document manage.
++ We can enhance the feature of multiple teams and manage documents.
++ Enhance the CI/CD pipeline 
++ We can enhance the security for authentication.
++ We can enhance the other task like - resume format, other APIs
++ We can enhance the multiple agent with the help of Bedrock.
 
 
 
